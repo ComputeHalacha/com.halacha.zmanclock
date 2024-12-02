@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.webkit.WebResourceRequest
 import android.webkit.WebResourceResponse
 import android.webkit.WebView
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.webkit.WebViewAssetLoader
 import androidx.webkit.WebViewAssetLoader.AssetsPathHandler
@@ -27,17 +26,15 @@ class MainActivity  : AppCompatActivity() {
         webView.webViewClient = LocalContentWebViewClient(assetLoader)
 
         webView.settings.javaScriptEnabled = true
-        webView.settings.domStorageEnabled = true
         webView.settings.useWideViewPort = true
+        webView.settings.domStorageEnabled = true
         webView.settings.allowContentAccess = true
-        webView.settings.allowFileAccess = true
 
         webView.loadUrl("https://zmanclock.net/assets/index.html")
     }
 }
 
 private class LocalContentWebViewClient(private val assetLoader: WebViewAssetLoader) : WebViewClientCompat() {
-    @RequiresApi(21)
     override fun shouldInterceptRequest(
         view: WebView,
         request: WebResourceRequest
@@ -46,6 +43,7 @@ private class LocalContentWebViewClient(private val assetLoader: WebViewAssetLoa
     }
 
     // To support API < 21.
+    @Deprecated("")
     override fun shouldInterceptRequest(
         view: WebView,
         url: String
