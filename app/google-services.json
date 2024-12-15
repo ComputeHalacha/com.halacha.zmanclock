@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "109055999625",
+    "project_id": "zmanclock-3561a",
+    "storage_bucket": "zmanclock-3561a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109055999625:android:73e5824c4892d629021058",
+        "android_client_info": {
+          "package_name": "com.halacha.zmanclock"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFQdLJTL8NOwvx_aaSsl-LSd1NbP0x2Kw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

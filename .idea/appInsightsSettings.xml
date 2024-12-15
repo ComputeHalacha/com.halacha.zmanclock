@@ -9,10 +9,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.halacha.zmanclock" />
+                  <option name="mobileSdkAppId" value="1:109055999625:android:73e5824c4892d629021058" />
+                  <option name="projectId" value="zmanclock-3561a" />
+                  <option name="projectNumber" value="109055999625" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

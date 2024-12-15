@@ -1,4 +1,5 @@
 plugins {
+    id 'com.google.gms.google-services'
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
@@ -11,9 +12,9 @@ android {
     defaultConfig {
         applicationId "com.halacha.zmanclock"
         minSdk 24
-        targetSdk 34
-        versionCode 6
-        versionName "1.6"
+        targetSdk 35
+        versionCode 159
+        versionName '1.5.9'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,7 +42,8 @@ android {
 }
 
 dependencies {
-
+    implementation platform(libs.firebase.bom)
+    implementation libs.firebase.analytics
     implementation libs.androidx.core.ktx
     implementation libs.androidx.lifecycle.runtime.ktx
     implementation libs.androidx.activity.compose
