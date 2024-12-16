@@ -1,14 +1,9 @@
 package com.halacha.zmanclock
 
 import android.annotation.SuppressLint
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities.NET_CAPABILITY_INTERNET
-import android.net.NetworkCapabilities.NET_CAPABILITY_NOT_METERED
 import android.net.Uri
-import android.net.http.SslError
 import android.os.Bundle
 import android.view.ViewGroup.MarginLayoutParams
-import android.webkit.SslErrorHandler
 import android.webkit.WebResourceRequest
 import android.webkit.WebResourceResponse
 import android.webkit.WebView
@@ -34,7 +29,10 @@ class MainActivity  : AppCompatActivity() {
         webView.settings.domStorageEnabled = true
         webView.settings.allowContentAccess = true
 
+        loadLocal(webView)
 
+        /************************************** FOR NEXT VERSION
+         * ****************************************************************************************
         val connectivityManager = getSystemService(ConnectivityManager::class.java)
         val currentNetwork = connectivityManager.activeNetwork
         val caps = connectivityManager.getNetworkCapabilities(currentNetwork)
@@ -43,6 +41,7 @@ class MainActivity  : AppCompatActivity() {
                 NET_CAPABILITY_NOT_METERED
             ) == true
         ) {
+
             try {
                 webView.webViewClient = PublicContentWebViewClient()
                 webView.loadUrl("https://www.compute.co.il/zman-clock/")
@@ -52,6 +51,7 @@ class MainActivity  : AppCompatActivity() {
         } else {
             loadLocal(webView)
         }
+         ***************************************************************/
 
         ViewCompat.setOnApplyWindowInsetsListener(webView) { v, windowInsets ->
             val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -95,10 +95,11 @@ private class LocalContentWebViewClient(private val assetLoader: WebViewAssetLoa
         return assetLoader.shouldInterceptRequest(Uri.parse(url))
     }
 }
-
+/***************************************************************************************************
 private class PublicContentWebViewClient() : WebViewClientCompat() {
     @SuppressLint("WebViewClientOnReceivedSslError")
     override fun onReceivedSslError(view: WebView?, handler: SslErrorHandler?, error: SslError?) {
         handler?.proceed()
     }
 }
+ */
